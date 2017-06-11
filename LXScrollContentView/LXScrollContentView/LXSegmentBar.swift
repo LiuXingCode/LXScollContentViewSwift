@@ -24,6 +24,7 @@ class LXSegmentBar: UIView {
             titleLabels.removeAll()
             for title in titles {
                 let label = UILabel()
+                label.backgroundColor = self.style.backgroundColor
                 label.tag = 888 + titleLabels.count
                 label.text = title
                 label.textAlignment = .center

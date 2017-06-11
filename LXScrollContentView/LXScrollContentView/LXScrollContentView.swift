@@ -10,7 +10,26 @@ import UIKit
 
 private let kContentViewCellID = "kContentViewCellID"
 
+@objc protocol LXScrollContentViewDelegate {
+    @objc optional func contentViewDidEndDecelerating(_ contentView: LXScrollContentView, startIndex: Int, endIndex: Int)
+    @objc optional func contentViewDidScroll(_ contentView: LXScrollContentView, fromIndex: Int, toIndex: Int, progress: CGFloat)
+}
+
 class LXScrollContentView: UIView {
+    
+    weak var delegate: LXScrollContentViewDelegate?
+    
+    var pageIndex : Int = 0 {
+        didSet{
+            guard pageIndex != oldValue && pageIndex >= 0 && pageIndex < childVcs.count - 1 else {
+                return
+            }
+            isForbidScrollDelegate = true
+            collectionView.scrollToItem(at: IndexPath(row: pageIndex, section: 0), at: .left, animated: false)
+        }
+    }
+    
+    fileprivate var isForbidScrollDelegate : Bool = false
     
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -37,6 +56,8 @@ class LXScrollContentView: UIView {
     }()
     
     fileprivate var parentVc : UIViewController?
+    
+    fileprivate var startOffsetX : CGFloat = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -110,6 +131,58 @@ extension LXScrollContentView : UICollectionViewDelegate {
         if childVc.parent != nil {
             childVc.removeFromParentViewController()
         }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate && collectionView == scrollView {
+            scollViewEndScroll()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if collectionView == scrollView {
+            scollViewEndScroll()
+        }
+    }
+    
+    private func scollViewEndScroll() {
+        let endOffsetX = collectionView.contentOffset.x
+        let startIndex = Int(startOffsetX / collectionView.bounds.width)
+        let endIndex = Int(endOffsetX / collectionView.bounds.width)
+        self.delegate?.contentViewDidEndDecelerating?(self, startIndex: startIndex, endIndex: endIndex)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+        isForbidScrollDelegate = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView == collectionView && isForbidScrollDelegate == false else {
+            return
+        }
+        let endOffsetX = scrollView.contentOffset.x
+        let fromIndex = Int(startOffsetX / scrollView.bounds.width)
+        var progress : CGFloat = 0
+        var toIndex : Int = 0
+        
+        if (startOffsetX < endOffsetX) {//左滑
+            progress = (endOffsetX - startOffsetX) / scrollView.bounds.width
+            toIndex = fromIndex + 1
+            if toIndex > childVcs.count - 1 {
+                toIndex = childVcs.count - 1
+            }
+        } else if (startOffsetX == endOffsetX){
+            progress = 0
+            toIndex = fromIndex
+        } else {
+            progress = (startOffsetX - endOffsetX) / scrollView.bounds.width
+            toIndex = fromIndex - 1
+            if toIndex < 0 {
+                toIndex = 0
+            }
+        }
+        self.delegate?.contentViewDidScroll?(self, fromIndex: fromIndex, toIndex: toIndex, progress: progress)
     }
     
 }

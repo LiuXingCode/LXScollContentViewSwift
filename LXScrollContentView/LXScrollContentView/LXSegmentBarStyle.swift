@@ -10,6 +10,8 @@ import UIKit
 
 class LXSegmentBarStyle {
     
+    var backgroundColor : UIColor = UIColor.white
+    
     var normalTitleColor : UIColor = UIColor.black
     
     var selectedTitleColor : UIColor = UIColor.red
@@ -20,7 +22,7 @@ class LXSegmentBarStyle {
     
     var indicatorHeight : CGFloat = 2.0
     
-    var indicatorExtraW : CGFloat = 5.0
+//    var indicatorExtraW : CGFloat = 5.0
     
     var indicatorBottomMargin : CGFloat = 0
     

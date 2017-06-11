@@ -16,6 +16,7 @@
 		CA42897E1EB302C90053AC50 /* LXScrollContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42897D1EB302C90053AC50 /* LXScrollContentView.swift */; };
 		CA53895D1ED43B1000AC95C7 /* LXSegmentBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA53895C1ED43B1000AC95C7 /* LXSegmentBarStyle.swift */; };
 		CA53895F1ED4502500AC95C7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA53895E1ED4502500AC95C7 /* UIColor+Extension.swift */; };
+		CACED8831EECCAD500B2ED58 /* LXCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CA42897D1EB302C90053AC50 /* LXScrollContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXScrollContentView.swift; sourceTree = "<group>"; };
 		CA53895C1ED43B1000AC95C7 /* LXSegmentBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXSegmentBarStyle.swift; sourceTree = "<group>"; };
 		CA53895E1ED4502500AC95C7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXCategoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				CA42897A1EB302580053AC50 /* LXScrollContentView */,
 				CA4289681EB3020B0053AC50 /* AppDelegate.swift */,
 				CA42896A1EB3020B0053AC50 /* ViewController.swift */,
+				CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */,
 				CA53895E1ED4502500AC95C7 /* UIColor+Extension.swift */,
 				CA42896C1EB3020B0053AC50 /* Main.storyboard */,
 				CA42896F1EB3020B0053AC50 /* Assets.xcassets */,
@@ -110,6 +113,7 @@
 		CA42895D1EB3020B0053AC50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LX;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "刘行";
@@ -157,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACED8831EECCAD500B2ED58 /* LXCategoryViewController.swift in Sources */,
 				CA42897C1EB302BC0053AC50 /* LXSegmentBar.swift in Sources */,
 				CA42897E1EB302C90053AC50 /* LXScrollContentView.swift in Sources */,
 				CA42896B1EB3020B0053AC50 /* ViewController.swift in Sources */,
