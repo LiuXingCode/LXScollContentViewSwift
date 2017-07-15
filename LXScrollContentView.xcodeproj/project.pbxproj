@@ -14,9 +14,9 @@
 		CA4289731EB3020B0053AC50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA4289711EB3020B0053AC50 /* LaunchScreen.storyboard */; };
 		CA53895F1ED4502500AC95C7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA53895E1ED4502500AC95C7 /* UIColor+Extension.swift */; };
 		CACED8831EECCAD500B2ED58 /* LXCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */; };
-		CAD3BD941F1A11C900EDCDCE /* LXScrollContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD911F1A11C900EDCDCE /* LXScrollContentView.swift */; };
-		CAD3BD951F1A11C900EDCDCE /* LXSegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD921F1A11C900EDCDCE /* LXSegmentBar.swift */; };
-		CAD3BD961F1A11C900EDCDCE /* LXSegmentBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD931F1A11C900EDCDCE /* LXSegmentBarStyle.swift */; };
+		CAD3BD9B1F1A13D700EDCDCE /* LXScrollContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD981F1A13D700EDCDCE /* LXScrollContentView.swift */; };
+		CAD3BD9C1F1A13D700EDCDCE /* LXSegmentBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD991F1A13D700EDCDCE /* LXSegmentBar.swift */; };
+		CAD3BD9D1F1A13D700EDCDCE /* LXSegmentBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD3BD9A1F1A13D700EDCDCE /* LXSegmentBarStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +29,9 @@
 		CA4289741EB3020B0053AC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA53895E1ED4502500AC95C7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXCategoryViewController.swift; sourceTree = "<group>"; };
-		CAD3BD911F1A11C900EDCDCE /* LXScrollContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXScrollContentView.swift; sourceTree = "<group>"; };
-		CAD3BD921F1A11C900EDCDCE /* LXSegmentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXSegmentBar.swift; sourceTree = "<group>"; };
-		CAD3BD931F1A11C900EDCDCE /* LXSegmentBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXSegmentBarStyle.swift; sourceTree = "<group>"; };
+		CAD3BD981F1A13D700EDCDCE /* LXScrollContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXScrollContentView.swift; sourceTree = "<group>"; };
+		CAD3BD991F1A13D700EDCDCE /* LXSegmentBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXSegmentBar.swift; sourceTree = "<group>"; };
+		CAD3BD9A1F1A13D700EDCDCE /* LXSegmentBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LXSegmentBarStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		CA4289671EB3020B0053AC50 /* LXScrollContentView */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3BD901F1A11C900EDCDCE /* LXScrollContentViewLib */,
+				CAD3BD971F1A13D700EDCDCE /* LXScrollContentViewLib */,
 				CA4289681EB3020B0053AC50 /* AppDelegate.swift */,
 				CA42896A1EB3020B0053AC50 /* ViewController.swift */,
 				CACED8821EECCAD500B2ED58 /* LXCategoryViewController.swift */,
@@ -77,12 +77,12 @@
 			path = LXScrollContentView;
 			sourceTree = "<group>";
 		};
-		CAD3BD901F1A11C900EDCDCE /* LXScrollContentViewLib */ = {
+		CAD3BD971F1A13D700EDCDCE /* LXScrollContentViewLib */ = {
 			isa = PBXGroup;
 			children = (
-				CAD3BD911F1A11C900EDCDCE /* LXScrollContentView.swift */,
-				CAD3BD921F1A11C900EDCDCE /* LXSegmentBar.swift */,
-				CAD3BD931F1A11C900EDCDCE /* LXSegmentBarStyle.swift */,
+				CAD3BD981F1A13D700EDCDCE /* LXScrollContentView.swift */,
+				CAD3BD991F1A13D700EDCDCE /* LXSegmentBar.swift */,
+				CAD3BD9A1F1A13D700EDCDCE /* LXSegmentBarStyle.swift */,
 			);
 			path = LXScrollContentViewLib;
 			sourceTree = "<group>";
@@ -164,10 +164,10 @@
 				CACED8831EECCAD500B2ED58 /* LXCategoryViewController.swift in Sources */,
 				CA42896B1EB3020B0053AC50 /* ViewController.swift in Sources */,
 				CA53895F1ED4502500AC95C7 /* UIColor+Extension.swift in Sources */,
-				CAD3BD951F1A11C900EDCDCE /* LXSegmentBar.swift in Sources */,
+				CAD3BD9C1F1A13D700EDCDCE /* LXSegmentBar.swift in Sources */,
 				CA4289691EB3020B0053AC50 /* AppDelegate.swift in Sources */,
-				CAD3BD941F1A11C900EDCDCE /* LXScrollContentView.swift in Sources */,
-				CAD3BD961F1A11C900EDCDCE /* LXSegmentBarStyle.swift in Sources */,
+				CAD3BD9B1F1A13D700EDCDCE /* LXScrollContentView.swift in Sources */,
+				CAD3BD9D1F1A13D700EDCDCE /* LXSegmentBarStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
