@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
   s.description  = "LXScrollContentViewSwift desc"
   s.homepage     = "https://github.com/LiuXingCode/LXScollContentViewSwift"
   s.license      = "MIT"
-  s.author             = { "liuxing" => "liuxinghenau@163.com" }
+  s.author       = { "liuxing" => "liuxinghenau@163.com" }
   s.source       = { :git => "https://github.com/LiuXingCode/LXScollContentViewSwift", :tag => "#{s.version}" }
-  s.source_files  = "LXScrollContentView/LXScrollContentViewLib/**/*.{h,m}"
+  s.source_files  = "LXScrollContentView/LXScrollContentViewLib/**/*.swift"
   s.ios.deployment_target = '8.0'
 
 end
