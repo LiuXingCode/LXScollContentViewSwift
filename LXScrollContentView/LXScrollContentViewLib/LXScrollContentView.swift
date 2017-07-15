@@ -166,13 +166,13 @@ extension LXScrollContentView : UICollectionViewDelegate {
         var progress : CGFloat = 0
         var toIndex : Int = 0
         
-        if (startOffsetX < endOffsetX) {//左滑
+        if startOffsetX < endOffsetX {//左滑
             progress = (endOffsetX - startOffsetX) / scrollView.bounds.width
             toIndex = fromIndex + 1
             if toIndex > childVcs.count - 1 {
                 toIndex = childVcs.count - 1
             }
-        } else if (startOffsetX == endOffsetX){
+        } else if startOffsetX == endOffsetX{
             progress = 0
             toIndex = fromIndex
         } else {
