@@ -64,12 +64,12 @@ public class LXScrollContentView: UIView {
         setupUI()
     }
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -82,7 +82,7 @@ extension LXScrollContentView {
         addSubview(collectionView)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = self.bounds
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -101,11 +101,11 @@ extension LXScrollContentView {
 
 extension LXScrollContentView : UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return childVcs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentViewCellID, for: indexPath);
         return cell
     }
@@ -113,7 +113,7 @@ extension LXScrollContentView : UICollectionViewDataSource {
 
 extension LXScrollContentView : UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
@@ -123,7 +123,7 @@ extension LXScrollContentView : UICollectionViewDelegate {
         cell.contentView.addSubview(childVc.view)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let childVc = childVcs[indexPath.row]
         if childVc.view.superview != nil {
             childVc.view.removeFromSuperview()
@@ -133,13 +133,13 @@ extension LXScrollContentView : UICollectionViewDelegate {
         }
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate && collectionView == scrollView {
             scollViewEndScroll()
         }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if collectionView == scrollView {
             scollViewEndScroll()
         }
@@ -152,12 +152,12 @@ extension LXScrollContentView : UICollectionViewDelegate {
         self.delegate?.contentViewDidEndDecelerating?(self, startIndex: startIndex, endIndex: endIndex)
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         startOffsetX = scrollView.contentOffset.x
         isForbidScrollDelegate = false
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard scrollView == collectionView && isForbidScrollDelegate == false else {
             return
         }
