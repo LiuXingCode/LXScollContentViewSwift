@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LXSegmentBarStyle {
+public class LXSegmentBarStyle {
     
     var backgroundColor : UIColor = UIColor.white
     

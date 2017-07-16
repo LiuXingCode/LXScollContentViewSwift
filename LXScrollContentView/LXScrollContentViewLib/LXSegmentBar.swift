@@ -12,7 +12,7 @@ import UIKit
     @objc optional func segmentBar(_ segmentBar: LXSegmentBar, selectedIndex: Int)
 }
 
-class LXSegmentBar: UIView {
+public class LXSegmentBar: UIView {
     
     weak var delegate : LXSegmentBarDelegate?
     

@@ -15,7 +15,7 @@ private let kContentViewCellID = "kContentViewCellID"
     @objc optional func contentViewDidScroll(_ contentView: LXScrollContentView, fromIndex: Int, toIndex: Int, progress: CGFloat)
 }
 
-class LXScrollContentView: UIView {
+public class LXScrollContentView: UIView {
     
     weak var delegate: LXScrollContentViewDelegate?
     
