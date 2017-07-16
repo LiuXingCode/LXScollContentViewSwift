@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LXScrollContentViewSwift"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "LXScrollContentViewSwift"
   s.description  = "LXScrollContentViewSwift desc"
   s.homepage     = "https://github.com/LiuXingCode/LXScollContentViewSwift"
